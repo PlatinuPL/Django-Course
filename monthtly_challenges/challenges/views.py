@@ -16,8 +16,8 @@ monthly_challenges = {
     'september': "Walk 20 minutes every each day!",
     'october': "Walk 20 minutes every each day!",
     'november': "Walk 20 minutes every each day!",
-    'december': "Walk 20 minutes every each day!",
-    'Kolotenber': "Dance 1 houer every each day!"
+    'december': "Walk 20 minutes every each day!"
+
 }
 
 def index(request):
