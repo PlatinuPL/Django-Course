@@ -1,14 +1,53 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block css_files %}
+{% block page_title %}
+This post title
 {% endblock %}
 
-{% block page_title %}
-MY Single post
+{% block css_files %}
+<link rel= "stylesheet" href="{% static "blog/single_post.css" %}"/>
 {% endblock %}
 
 {% block content %}
-    {% include "blog/includes/header.html"%}
-    <a href="{% url "posts" %}">MY Single post</a>
+<section id="summary">
+    <h2>Post Title</h2>
+    <article>
+    <img src="{% static "blog/images/woods.jpg"%}" alt="Post Title"/>
+    <address>By David</address>
+    <div>
+        Last updated on<time>July 10ty</time>
+    </div>
+    </article>
+</section>
+
+<main>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+    ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+     velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+       mollit anim id est laborum.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+          occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+           mollit anim id est laborum.
+        </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex 
+        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+            occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.
+        </p>
+    </main>
 {% endblock%}
