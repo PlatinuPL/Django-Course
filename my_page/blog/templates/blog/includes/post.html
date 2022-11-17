@@ -1,13 +1,11 @@
 {% load static %}
 <li>
     <article class="post">
-        <a href="{% url "singpo" "the-biggest-dream"%}">
-            <img src="{% static "blog/images/woods.jpg"%}" alt="My bigest dream"/>
+        <a href="{% url "singpo" post.slug%}">
+            <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title}}"/>
             <div class="post__content">
-                <h3>My biggest dream</h3>
-                <p> I will tell you the story of my biggest dream in life.  There's nothing like the views you get when hiking in the
-                    mountains! And I wasn't even prepared for what happened whilst I
-                    was enjoying the view!
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}  <! post odnosi się do iteracji funkcji for w pliku index.html>
                 </p>
             </div>
           </a>
