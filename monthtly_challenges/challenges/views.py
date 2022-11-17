@@ -24,7 +24,7 @@ def index(request):
     months = list(monthly_challenges.keys())
 
     return render(request, "challenges/index.html", {
-        "months" : months
+        "months" : months # przekazanie znimennej months do pliku html
 
     })
 

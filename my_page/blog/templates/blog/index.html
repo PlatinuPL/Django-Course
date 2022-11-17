@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+MY Blog
+{% endblock %}
+
+{% block css_files %}
+<link rel= "stylesheet" href="{% static "blog/index.css" %}"/>
+<link rel= "stylesheet" href="{% static "blog/post.css" %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+  
+    <section id="welcome">
+    <header>
+        <img src="{% static "blog/images/dawid.jpg"%}" alt="David - The Author Of this blog"/>
+        <h2>David_Plat's BLOG</h2>
+    </header>
+    <p>Hello My name is Dawid, I'm trying to become a programmer. I love Python!</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My latest Thoughts </h2>
+<ul>
+  {% include "blog/includes/post.html" %}
+        </ul>
+      </section>
+
+<section id="about">
+    <h2>What i Do</h2>
+    <p>I love sport. I love read books and learning new things</p>
+    <p>My goal is to be consistent to achieve the goals set.
+        I want to chage my life and do something more
+        interested than selling pots on performance lets say</p>
+</section>
+{% endblock%}

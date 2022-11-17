@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+{% endblock %}
+
+{% block page_title %}
+MY Single post
+{% endblock %}
+
+{% block content %}
+    {% include "blog/includes/header.html"%}
+    <a href="{% url "posts" %}">MY Single post</a>
+{% endblock%}
