@@ -11,4 +11,8 @@
         <li><a href="{{ book.get_absolute_url }}">{{book.title}}</a> Rating:{{book.rating}} </li>
         {% endfor %}
     </ul>
-{% endblock %}
+    <hr>
+    <p>Total number Of Books: {{ total_number_of_books}}</p>
+    <p>Average Rating: {{ average_rating.rating__avg }}</p>
+    <!-- rating__avg - jeśli chcesz wyświetlić sam wynik (rating_min - to np. wynik aggregacji minimalnej)-->
+    {% endblock %}
