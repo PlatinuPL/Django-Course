@@ -14,14 +14,17 @@ class Book(models.Model):
      #blank = True - dzięki temu nie musisz wpisywać niczego przy
      #  dodawaniu książki w panelu administratora w Django
      #  -slug doda się automatycznie ponieważ dodałeś self.slug = slugify(self.title)
-    
+    # Alternatywnie możesz wpisać editable = False - wtedy to pole nie pokaże się w 
+    # cale podczas tworzenie pozycji w Django administration
+    # nie działa z classą BookAdmin(admin.ModelAdmin): w pliku admin.py
     def get_absolute_url(self):
         return reverse("book-detail", args=[self.slug])
     
-    def save(self, *args, **kwargs):
+    # ta funkcja automatycznie zapisuje slug klasy Book jako tytuł
+    """ def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args,**kwargs)
-    
+    """
     def __str__(self):
         return f"{self.title} ({self.rating})"
 

@@ -2,4 +2,20 @@ from django.contrib import admin
 from .models import Book
 # Register your models here.
 
-admin.site.register(Book)
+
+class BookAdmin(admin.ModelAdmin):
+# Dzięki tej klasie możesz dodać jakąś wartość z modelu,
+#  żeby była wyświetlana w panelu administratora
+# NIE DZIAŁA RAZEM Z PREPOPULATE_FIELDS
+#   readonly_fields = ("slug",)
+# dzięki temu mamy podgląd tej wartości w czasie rzeczywistym
+#  (podczas usupełniania)
+    prepopulated_fields = {"slug" : ("title",)}
+# dadnie filtrowanie w panelu Admin
+    list_filter = ("author","rating",)
+
+    list_display = ("title", "author",)
+
+
+
+admin.site.register(Book,BookAdmin)
