@@ -5,7 +5,7 @@ from . import views
 
 
 urlpatterns = [
-    path("", views.index,name = "index"),
-    path("posts", views.posts,name = "posts"),
-    path("posts/<slug:slug>", views.single_post, name = "singpo")
+    path("", views.StartingPageView.as_view(),name = "index"),
+    path("posts", views.AllPostsView.as_view(),name = "posts"),
+    path("posts/<slug:slug>", views.SinglePostView.as_view(), name = "singpo")
 ]
