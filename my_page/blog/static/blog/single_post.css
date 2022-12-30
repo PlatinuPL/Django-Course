@@ -180,3 +180,7 @@ body {
   #comments li:last-of-type {
     border-bottom: none; 
   }
+
+  #comments h2 {
+    color: #464646;
+  }

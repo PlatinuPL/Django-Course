@@ -30,7 +30,7 @@ class Post(models.Model):
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
-        return f"{self.date}, {self.author} - {self.title}"
+        return f"Post: {self.title}, Author:{self.author}"
     
 class Comment(models.Model):
     user_name = models.CharField(max_length=120)
