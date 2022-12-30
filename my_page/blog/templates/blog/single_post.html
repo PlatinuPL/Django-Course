@@ -38,14 +38,18 @@
 
 
 <main>
-    <p>
-        {{post.excerpt|linebreaks}}
-    </p>
-    <p>
         {{post.content|linebreaks}}
-        </p>
-    </main>
+</main>
 
+    <section id="comments">
+        <ul>
+            {% for comment in comments %}
+             <li>
+                <h2>{{ comment.user_name }}</h2>
+                <p>{{ comment.text|linebreaks }}</p>
+             </li>
+             {% endfor %}
+            </section>
     <section id="comment-form">
         <h2>Your Comment</h2>
         <form action="{% url "singpo" post.slug %} "method="POST">
