@@ -71,6 +71,9 @@ class SinglePostView(View):
             }
         return render(request, "blog/single_post.html", context)
 
+class ReadLaterView(View):
+    def post(self, request):
+        pass
 
     # def get_context_data(self, **kwargs):
     #     context =  super().get_context_data(**kwargs)
