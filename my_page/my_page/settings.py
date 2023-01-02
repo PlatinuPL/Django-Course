@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from os import getenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,16 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-j)+f0@)k2yqpq7js5wj)gxwtq2l2&2c-e&kdbnmvenw_(26h+^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = getenv("IS_PRODUCTION", True)
 
-ALLOWED_HOSTS = ["192.168.1.137","178.183.177.116"]
+ALLOWED_HOSTS = [
+    getenv("APP_HOST")
+    ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    "profiles",
-    "reviews", 
     "blog",
     'django.contrib.admin',
     'django.contrib.auth',
