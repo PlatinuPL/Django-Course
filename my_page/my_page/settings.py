@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-j)+f0@)k2yqpq7js5wj)gxwtq2l2&2c-e&kdbnmvenw_(26h+^
 DEBUG = getenv("IS_DEVELOPMENT", True)
 
 ALLOWED_HOSTS = [
-    getenv("APP_HOST")
+    getenv("APP_HOST"), "127.0.0.1"
     ]
 
 
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     "blog",
+    "storages",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,3 +141,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/files/"
+
+AWS_STORAGE_BUCKET_NAME = "django-blog-platinu"
+AWS_S3_REGION_NAME = "us-east-1"
+AWS_ACCESS_KEY_ID = "AKIA4N6APQIVE3JRJNMB"
+AWS_SECRET_ACCESS_KEY = "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"
+
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
