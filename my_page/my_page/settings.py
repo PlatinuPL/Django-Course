@@ -149,4 +149,8 @@ AWS_SECRET_ACCESS_KEY = "1TrPgUu+KZVPb091QI/pC4UE5r34Gpy8Hn+7BGRX"
 
 AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 
-STATICFILES_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+STATICFILES_FOLDER = "static"
+MEDIAFILES_FOLDER = "media"
+
+STATICFILES_STORAGE = "custom_storages.StaticFilesStorage"
+DEFAULT_FILE_STORAGE = "custom_storages.MediaFilesStorage"
